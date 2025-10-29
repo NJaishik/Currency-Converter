@@ -1,0 +1,101 @@
+.slds-card
+{
+  max-width: 520px;
+  background-color: #0b2451;
+  border-radius: 25px;
+  min-width: 370px;
+  padding: 16px;
+}
+
+.container
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 16px;
+  background: url(sfsites/c/resource/currencyConverterAssets/currencyConverterAssets/global-currency-background_115579-800.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.button
+{
+  background-color: #f9ba49;
+  color: #0c2451;
+  padding: 12px;
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.selectors
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px; 
+}
+
+.img1
+{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.custom-icon
+{
+  --slds-c-icon-color-background: #f9ba49;
+  --slds-c-icon-color-foreground: #0b2451;
+  transform: rotate(45deg);
+}
+
+.lhs
+{
+  color: #1b96ff;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.rhs
+{
+  color: #fb8500;
+  padding-left: 3px;
+}
+
+.error
+{
+  color: red;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+/* Responsive Tweaks */
+@media screen and (max-width: 600px) 
+{
+  .slds-card 
+  {
+    max-width: 100%;
+    min-width: unset;
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .button 
+  {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+
+  .lhs, .error 
+  {
+    font-size: 1.2rem;
+  }
+}
+

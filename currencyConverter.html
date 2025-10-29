@@ -1,0 +1,58 @@
+<template>
+  <div class="container">
+    <div class="slds-card">
+      <div class="slds-text-heading_large slds-text-color_inverse slds-text-align_center slds-m-bottom_large">
+        <h1 ><b>Currency Converter</b> </h1>
+      </div>
+
+      <div class="img1">
+        <img src={currencyImage} alt="Currency Icon" height="150" width="150"/>
+      </div>
+      
+      <form onsubmit={submitHandler}>
+        <lightning-input name="amount" type="number" placeholder="Enter Amount" required="true" label="amount" variant="label-hidden" onchange={handleAmountChange}></lightning-input>
+        
+        <br/>
+        
+        <div class="slds-grid slds-gutters selectors">
+          <div class="slds-col">
+            <lightning-combobox name="countryFrom" label="from" value={countryFrom} placeholder="Currency" variant="label-hidden"
+                                options={countryList} onchange={handleFromChange}> </lightning-combobox>
+          </div>
+          
+          <div class="slds-col slds-text-align_center custom-icon">
+            <lightning-icon icon-name='action:change_record_type' alternative-text='change_record_type' size='small' title='change_record_type'></lightning-icon>
+          </div>
+          
+          <div class="slds-col">
+            <lightning-combobox name="countryTo" label="to" value={countryTo} placeholder="Currency" variant="label-hidden"
+                                options={countryList} onchange={handleToChange}> </lightning-combobox>
+          </div>
+        </div>
+
+        <div class="slds-text-align_center">
+          <template if:true={result}>
+            <div class="lhs">
+              {amount} {countryFrom} =
+              <span class="rhs">
+                {result} {countryTo}
+              </span> 
+            </div>
+          </template>
+          <template if:true={error}>
+            <div class="error">
+              {error}
+            </div>
+          </template>
+        </div>
+        
+        <div>
+          <p align="center">
+            <button class="slds-button slds-button_stretch button" type="submit">Convert</button>
+          </p>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</template>
